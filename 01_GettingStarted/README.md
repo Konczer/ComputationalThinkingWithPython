@@ -157,12 +157,69 @@ Assuming you have a GitHub account, you can create a new repository by following
 
 - Follow the instructions to push your local repository to GitHub:
 
+### Connecting the Local and the Remote Repository
+
+Firrst navigate to the local repository folder (if you are not already there) `$ cd TestProject`
+
 As a good prectice check if the folder is not linked to any other remote repository:
 ```bash
 $ git remote -v
 ```
 
+Add the remote repository URL to your local repository:
+
 ```bash
 $ git remote add origin https://github.com/NEW_GITHUB_USERNAME/TestProject.git
 ```
 
+Create the main branch:
+
+```bash
+$ git branch -M main
+```
+
+Push the changes to GitHub:
+
+```bash
+$ git push -u origin main
+```
+
+- Check if the files are uploaded to GitHub by refreshing the page.
+
+### Adding a README file
+
+- You can add a README file to your repository by creating a new file called `README.md` (a [markdown](https://www.markdownguide.org/basic-syntax/) file) in the root of your project folder.
+
+- You can use the following template for your README file:
+```markdown
+# Project Title (Test Project)
+## Description
+A brief description of your project. (First public project)
+## Installation
+Instructions for installing and running your project. (Leave it empty for now)
+## Usage
+Instructions for using your project. (Leave it empty for now)
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+```
+
+The following command line will create and write the README file:
+```bash
+$ echo -e "# Test Project \n## Description \nFirst public project \n## License \nThis project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details" > README.md
+```
+
+(Alternatively you can use any text editor to create the file. For example, you can use `nano` in the terminal, or any code editor like Visual Studio Code, etc.)
+
+- Add it to the repository:
+```bash
+$ git add README.md
+```
+- Commit the changes:
+```bash
+$ git commit -m "Added README file"
+```
+- Push the changes to GitHub:
+```bash
+$ git push
+```
+- Check if the README file is uploaded to GitHub by refreshing the page.
