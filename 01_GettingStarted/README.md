@@ -76,3 +76,93 @@ The chosen topics will be:
 
 The last session will be dedicated to the Final Project presentations. The students will present their projects in a 5-10 minutes long presentation. Peers and the seminar leader will review the projects and the best ones will be selected for further development and publication.
 
+## Getting started with Git and GitHub
+
+> Git is a tool useful primarely for developing and maintaining large collaborative software projects.
+
+We will use only a tiny fraction of its capabilities, but GitHub will give a visibility to your project and familiarity with it will be helpful in the future.
+
+A few Online tutorials:
+- [Git Tutorial For Dummies](https://www.youtube.com/watch?v=mJ-qvsxPHpY)
+- [How to create your first GitHub repository](https://www.youtube.com/watch?v=-RZ03WHqkaY)
+- [Git Tutorial for Beginners](https://www.youtube.com/watch?v=8JJ101D3knE)
+
+### Installing [Git](https://git-scm.com/)
+
+Usually Linix and MacOS machines have Git preinstalled. To check if you have it, open a terminal and type:
+```bash
+$ git --version
+```
+
+If you see a version number, you have it installed. If not, you can install it using the package manager of your system.
+
+For **Windows**, you can download the installer from the [Git website](https://git-scm.com/download/win) (or [Git for Windows](https://gitforwindows.org/) website) and follow the installation instructions.
+- See a brief tutorial [here](https://www.youtube.com/watch?v=cweFdzKMeS0).
+
+### Setting up Git locally
+
+- Open a terminal (or Git Bash on Windows) and create and navigate to a project folder:
+```bash
+$ mkdir TestProject
+$ cd TestProject
+$ touch HelloWorld.ipynb
+```
+
+- Create a new Git repository:
+```bash
+$ git init
+```
+
+- make local setup:
+```bash
+$ git config --local user.name "Your Name"
+$ git config --local user.email youremail
+```
+(This is editing the `.git/config` file in the current directory.)
+
+- add the file to the repository:
+```bash
+$ git add .
+```
+
+- commit the changes:
+```bash
+$ git commit -m "Initial commit"
+```
+
+- check the status of the repository:
+```bash
+$ git status
+```
+### Creating a [GitHub](https://github.com/) repository
+
+(GitHub has a few popular alternatives, such as [GitLab](https://gitlab.com/) and [Bitbucket](https://bitbucket.org/). We will use GitHub for this seminar because of its popularity, long history, big community and the large number of available resources.)
+
+First you might need to [create a GitHub account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github). (If you already have one, you can skip this step.)
+
+- For creating a new account see [this tutorial](https://www.youtube.com/watch?v=h5cKAd94QNo).
+    - You will need to have and verify your email address.
+    - You will need to choose a username and password.
+        - (Later you can [change your user name](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-user-account-settings/changing-your-github-username#changing-your-username) )
+
+Assuming you have a GitHub account, you can create a new repository by following these steps:
+- Log in to your GitHub account.
+- Click on the "+" icon in the top right corner and select "New repository".
+- Enter a name for your repository (e.g., "TestProject").
+- Optionally, add a description.
+- Choose the visibility of your repository (lets make it public for now).
+- **Do not initialize this new repo with a README**—leave it empty (since you already have local files).
+- Click on "Create repository".
+- You will see a page with instructions on how to push your local repository to GitHub.
+
+- Follow the instructions to push your local repository to GitHub:
+
+As a good prectice check if the folder is not linked to any other remote repository:
+```bash
+$ git remote -v
+```
+
+```bash
+$ git remote add origin https://github.com/NEW_GITHUB_USERNAME/TestProject.git
+```
+
