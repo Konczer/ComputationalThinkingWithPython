@@ -12,7 +12,7 @@ This seminar is first and foremost about computational thinking—a practical, h
 ## Weekly schedule: 
 
 - **Session 1**: Getting Started
-    - Introduction to the seminar and core tools. Students set up GitHub accounts, Python virtual environments, and write their first "Hello World" program in a simple GUI.
+    - Introduction to the seminar and core tools. Students set up GitHub accounts, Python virtual environments, and write their first "Hello World" program in a simple IDE.
 
 - **Session 2**: Tools, Resources & Complexity
     - We explore online coding and learning platforms (LeetCode, W3Schools, Wolfram blogs, etc.) for inspiration and skill-building. Introduction to computational complexity, Big-O notation, and using Google Colab for notebook-based computation.
