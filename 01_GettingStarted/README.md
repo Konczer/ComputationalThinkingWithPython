@@ -36,8 +36,8 @@ In the first sessions we will set up the computational and programming tools whi
     - GitHub, Git,
     - Python, virtual environments, IDEs
     - Jupyter notebooks
-    - Google Colab
-- Online coding and learning platforms 
+- Online coding and learning platforms
+    - Google Colab, 
     - LeetCode, 
     - W3Schools, 
     - Wolfram blogs (for project ideas and inspiration)
