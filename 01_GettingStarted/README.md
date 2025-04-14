@@ -78,18 +78,17 @@ The last session will be dedicated to the Final Project presentations. The stude
 
 ## Getting started with Git and GitHub
 
-> Git is a tool useful primarely for developing and maintaining large collaborative software projects.
+> Git is a version control tool, useful primarily for developing and maintaining large collaborative software projects.
 
 We will use only a tiny fraction of its capabilities, but GitHub will give a visibility to your project and familiarity with it will be helpful in the future.
 
 A few Online tutorials:
 - [Git Tutorial For Dummies](https://www.youtube.com/watch?v=mJ-qvsxPHpY)
 - [How to create your first GitHub repository](https://www.youtube.com/watch?v=-RZ03WHqkaY)
-- [Git Tutorial for Beginners](https://www.youtube.com/watch?v=8JJ101D3knE)
 
 ### Installing [Git](https://git-scm.com/)
 
-Usually Linix and MacOS machines have Git preinstalled. To check if you have it, open a terminal and type:
+Usually Linux and MacOS machines have Git preinstalled. To check if you have it, open a terminal and type:
 ```bash
 $ git --version
 ```
@@ -150,18 +149,22 @@ Assuming you have a GitHub account, you can create a new repository by following
 - Click on the "+" icon in the top right corner and select "New repository".
 - Enter a name for your repository (e.g., "TestProject").
 - Optionally, add a description.
-- Choose the visibility of your repository (lets make it public for now).
+- Choose the visibility of your repository (let's make it Public).
 - **Do not initialize this new repo with a README**—leave it empty (since you already have local files).
+- Leave the `.gitignore` on None (you can add it later).
+- Leave the license on None (you can add it later).
 - Click on "Create repository".
-- You will see a page with instructions on how to push your local repository to GitHub.
-
-- Follow the instructions to push your local repository to GitHub:
+- You might see a page with instructions on how to push your local repository to GitHub.
+  - "…or push an existing repository from the command line":
+  - `git remote add origin https://github.com/GITHUB_USERNAME/TestProject.git`
+  - `git branch -M main`
+  - `git push -u origin main`
 
 ### Connecting the Local and the Remote Repository
 
-Firrst navigate to the local repository folder (if you are not already there) `$ cd TestProject`
+First navigate to the local repository folder (if you are not already there) `$ cd TestProject`
 
-As a good prectice check if the folder is not linked to any other remote repository:
+As a good practice check if the folder is not linked to any other remote repository:
 ```bash
 $ git remote -v
 ```
@@ -169,7 +172,7 @@ $ git remote -v
 Add the remote repository URL to your local repository:
 
 ```bash
-$ git remote add origin https://github.com/NEW_GITHUB_USERNAME/TestProject.git
+$ git remote add origin https://github.com/GITHUB_USERNAME/TestProject.git
 ```
 
 Create the main branch:
@@ -200,12 +203,12 @@ Instructions for installing and running your project. (Leave it empty for now)
 ## Usage
 Instructions for using your project. (Leave it empty for now)
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details (Will be added later)
 ```
 
 The following command line will create and write the README file:
 ```bash
-$ echo -e "# Test Project \n## Description \nFirst public project \n## License \nThis project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details" > README.md
+$ echo -e "# Test Project \n## Description \nFirst public project" > README.md
 ```
 
 (Alternatively you can use any text editor to create the file. For example, you can use `nano` in the terminal, or any code editor like Visual Studio Code, etc.)
@@ -216,10 +219,130 @@ $ git add README.md
 ```
 - Commit the changes:
 ```bash
-$ git commit -m "Added README file"
+$ git commit -a -m "Added README file"
 ```
 - Push the changes to GitHub:
 ```bash
 $ git push
 ```
 - Check if the README file is uploaded to GitHub by refreshing the page.
+
+#### Troubleshooting with password
+
+If you have trouble with the password, you can use a [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) instead of your password. You can create a personal access token in your GitHub account settings and use it as your password when pushing to GitHub.
+
+**Prepare a text file to save your Token.** You might see it only once, so save it in a secure place. (You can use a password manager or a text file.)
+
+[Generating a Classical token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic):
+- Go to your GitHub account Settings. (Top Right corner, click on your profile picture, then click on "Settings").
+- Click on "Developer settings" in the left sidebar (Bottom of the list).
+- Click on "Personal access tokens" in the left sidebar.
+- Click on "Tokens (classic)".
+- Click on "Generate new token (classic)".
+  - Select the expiration date (e.g. 90 days). (you could choose "No expiration" but it's not recommended for security reasons)
+  - Select the scopes you want to grant it (for pushing to GitHub, you need the `repo` scope).
+- Click on "Generate token".
+- Copy the token and save it in a secure place (you won't be able to see it again).
+- Use the token as your password when pushing to GitHub.
+
+### Additional resources
+
+- [GIT CHEAT SHEET](https://education.github.com/git-cheat-sheet-education.pdf)
+- [Git Tutorial for Beginners](https://www.youtube.com/watch?v=8JJ101D3knE)
+- [ProGit](https://git-scm.com/book/en/v2) book
+
+## Virtual environments
+
+Virtual environments are a way to create isolated Python environments for your projects. This allows you to manage dependencies and avoid conflicts between different projects.
+
+### Creating a virtual environment
+
+In this Seminar I suggest to use [Anaconda](https://www.anaconda.com/) for creating virtual environments. It is a popular distribution of Python for scientific computing and data science. It comes with a package manager called `conda` which makes it easy to create and manage virtual environments.
+(You can also use `venv`, which is more light weight but it will be not covered here. If you are interested in it, you can find a tutorial [here](https://realpython.com/python-virtual-environments-a-primer/).)
+
+### Installing Anaconda
+
+- Download the Anaconda installer from the [Anaconda website](https://www.anaconda.com/download/success).
+- Follow the installation instructions for your operating system.
+- After installation, open a terminal (or Anaconda Prompt on Windows) and type:
+```bash
+$ conda --version
+```
+
+### Setting up a virtual environment
+
+- Open a terminal (or Anaconda Prompt on Windows) and create a new virtual environment:
+```bash
+$ conda create --name testenv python=3.10
+```
+
+### Activating the virtual environment
+
+- Activate the virtual environment:
+```bash
+$ conda activate testenv
+```
+- verify the activation:
+```bash
+$ conda info --envs
+```
+- check the Python version:
+```bash
+$ python --version
+```
+
+### Deactivating the virtual environment
+
+- Deactivate the virtual environment:
+```bash
+$ conda deactivate
+```
+
+### Additional resources
+
+- [Conda Cheat Sheet](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf)
+
+
+## IDE, Visual Studio Code
+
+### Installing Visual Studio Code
+- Download the installer from the [Visual Studio Code website](https://code.visualstudio.com/download).
+- Follow the installation instructions for your operating system.
+- After installation, open Visual Studio Code and install the Python extension:
+    - Click on the Extensions icon in the left sidebar (or press `Ctrl+Shift+X`).
+    - Search for "Python" and click on "Install" for the official Python extension by Microsoft.
+- Install the Jupyter extension:
+    - Search for "Jupyter" and click on "Install" for the official Jupyter extension by Microsoft.
+
+## Hello World in Jupyter Notebook
+
+- Create a New File in Visual Studio Code:
+    - Click on the File menu and select "New File..." .
+    - Select "Jupyter Notebook" from the list of file types.
+    - To Set the kernel, click on the "Select Kernel" button in the top right corner and select the Python interpreter from your virtual environment. (e.g. `testenv`).
+      - (you might need to install ipykernel in VS Code)
+    - Write the following code in the first cell:
+```python
+print('Hello World')
+```
+
+- Run the cell by pressing `Shift+Enter`.
+- Save the file as `HelloWorld.ipynb` in your project folder.
+
+### Push the Hello World notebook to GitHub
+
+Commit the changes:
+```bash
+$ git commit -a -m "Added Hello World notebook"
+```
+- Push the changes to GitHub:
+```bash
+$ git push
+```
+- Check if the notebook is uploaded to GitHub by refreshing the page.
+
+## Congratulations
+
+You have successfully created a GitHub repository, set up a virtual environment, and created a Jupyter notebook with a "Hello World" program.
+
+**Great job!**
