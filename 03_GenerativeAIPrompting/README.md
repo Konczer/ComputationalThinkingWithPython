@@ -4,7 +4,7 @@
 
 In general, what is now called AI (Artificial Intelligence) is an (artificial-) Neural Network based Large Language Model (LLM), which is a type of Machine Learning (ML).
 
-As a very high-level overview, Large Language Models (LLMs) are huge neural networks (having billions to trillions of parameters) trained on vast amounts of text data. They are "trained" to predict the next "word" in a sentence. Therefore, they pick up the surface-level patterns of a language in the beginning, and first, they usually output good-sounding jibberish. However, with enough training, parameters and data, their answers become more and more meaningful, and seemingly pick up deeper, meaning-related patterns of the language. After a certain threshold, they can access, apply and combine information from the training data.
+As a very high-level overview, Large Language Models (LLMs) are huge neural networks (having billions to trillions of parameters) trained on vast amounts of text data. They are "trained" to predict the next "word" in a sentence (based on previous words in a [*context window*](https://www.ibm.com/think/topics/context-window)). Therefore, they pick up the surface-level patterns of a language in the beginning, and first, they usually output good-sounding gibberish. However, with enough training, parameters and data, their answers become more and more meaningful, and seemingly pick up deeper, meaning-related patterns of the language. After a certain threshold, they can access, apply and combine information from the training data.
 
 However, without extra effort, they are not reliable. A common feature of these models is hallucination, i.e. they tend to generate good-sounding parts which would fit well into the context, but are absolutely not true.
 
