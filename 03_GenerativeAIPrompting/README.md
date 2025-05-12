@@ -164,3 +164,9 @@ For a less philosophical but more technical overview, I can recommend the follow
 
 - [What Is ChatGPT Doing … and Why Does It Work?](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/) by Stephen Wolfram and many others.
 - [Prompt Engineering for Generative AI](https://www.oreilly.com/library/view/prompt-engineering-for/9781098153427/), an O'Reilly book
+- Self-fulfilling prophecies and reflexivity in social systems:
+    - [Reflexivity and Self-Fulfilling Prophecies](https://en.wikipedia.org/wiki/Self-fulfilling_prophecy#Reflexivity) - Wikipedia
+    - [Reflexivity](https://en.wikipedia.org/wiki/Reflexivity_(social_theory)) - Wikipedia
+    - [Pygmalion Effect](https://en.wikipedia.org/wiki/Pygmalion_effect) - Wikipedia
+    - [Golem Effect](https://en.wikipedia.org/wiki/Golem_effect) - Wikipedia
+- [Weapons of Math Destruction](https://www.goodreads.com/book/show/28186015-weapons-of-math-destruction) a book about the societal impact of algorithms, written by Cathy O'Neil.
